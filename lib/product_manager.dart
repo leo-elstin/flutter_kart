@@ -10,7 +10,6 @@ class ProductManager extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _StateProductManager();
   }
 }
@@ -22,9 +21,7 @@ class _StateProductManager extends State<ProductManager> {
   void initState() {
     if (widget.startingProduct != null) {
       _products.add(widget.startingProduct);
-//      return;
     }
-
     super.initState();
   }
 
