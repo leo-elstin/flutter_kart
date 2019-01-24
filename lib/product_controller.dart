@@ -11,7 +11,6 @@ class ProductController extends StatelessWidget {
     return RaisedButton(
       color: Theme.of(context).primaryColor,
       onPressed: () {
-
         addProduct({
           'title' : 'Testing'
         });

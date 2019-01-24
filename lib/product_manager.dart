@@ -31,15 +31,21 @@ class _StateProductManager extends State<ProductManager> {
     });
   }
 
+  void _removeProduct(int position) {
+    setState(() {
+      _products.removeAt(position);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Container(
             margin: EdgeInsets.all(10.0),
-            child: ProductController(_addProduct)),
+            child: ProductController(_addProduct), ),
         Expanded(
-          child: Products(_products),
+          child: Products(_products,deleteProduct : _removeProduct),
         )
       ],
     );
