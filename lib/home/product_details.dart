@@ -21,8 +21,8 @@ class ProductDetails extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.network(
-                'http://www.bhatkallys.com/wp-content/uploads/2016/12/22796096d9c63708fb5bdddd27fa10fe.jpg'),
+            // Image.network(
+            //     'http://www.bhatkallys.com/wp-content/uploads/2016/12/22796096d9c63708fb5bdddd27fa10fe.jpg'),
             Text('Comming soon'),
             Container(
               padding: EdgeInsets.all(15.0),
