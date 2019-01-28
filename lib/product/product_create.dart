@@ -49,6 +49,7 @@ class _ProductCreateState extends State<ProductCreate> {
               // hintText: '0.0'
             ),
             keyboardType: TextInputType.number,
+            textInputAction: TextInputAction.done,
             onChanged: (String value) {
               setState(() {
                 double.parse(value);
@@ -58,6 +59,9 @@ class _ProductCreateState extends State<ProductCreate> {
           SizedBox(
             height: 20,
           ),
+          // RaisedButton(onPressed: () {
+          //   FocusScope.of(context).requestFocus(new FocusNode());
+          // },),
           ProductController(widget.addProduct, {
             'title' : title,
             'description' : description,

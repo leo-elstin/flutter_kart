@@ -12,6 +12,7 @@ class ProductController extends StatelessWidget {
     return RaisedButton(
       color: Theme.of(context).primaryColor,
       onPressed: () {
+        FocusScope.of(context).requestFocus(new FocusNode());
         addProduct(
           _productData
         );

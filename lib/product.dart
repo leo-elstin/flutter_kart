@@ -11,8 +11,8 @@ class Products extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          // Image.network(
-          //     'http://www.bhatkallys.com/wp-content/uploads/2016/12/22796096d9c63708fb5bdddd27fa10fe.jpg'),
+          Image.network(
+              'http://www.bhatkallys.com/wp-content/uploads/2016/12/22796096d9c63708fb5bdddd27fa10fe.jpg'),
           Text(products[position]['title']),
           ButtonBar(
             alignment: MainAxisAlignment.center,
