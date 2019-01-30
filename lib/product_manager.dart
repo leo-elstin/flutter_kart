@@ -43,7 +43,8 @@ class _StateProductManager extends State<ProductManager> {
       children: <Widget>[
         Container(
             margin: EdgeInsets.all(10.0),
-            child: ProductController(_addProduct), ),
+            //child: ProductController(_addProduct()), 
+            ),
         Expanded(
           child: Products(_products,deleteProduct : _removeProduct),
         )
