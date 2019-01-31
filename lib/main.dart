@@ -9,8 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme:
-          ThemeData(brightness: Brightness.light, primarySwatch: Colors.purple),
+      theme: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.indigo,
+          accentColor: Colors.amberAccent,
+          buttonColor: Colors.blue),
       // home: AuthPage(),  this is replaced by routes '/'
       routes: {
         '/': (BuildContext context) => AuthPage(),
@@ -18,4 +21,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-} 
+}
