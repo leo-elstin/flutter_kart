@@ -52,7 +52,7 @@ class _ProductCreateState extends State<ProductCreate> {
             textInputAction: TextInputAction.done,
             onChanged: (String value) {
               setState(() {
-                double.parse(value);
+               price = double.parse(value);
               });
             },
           ),

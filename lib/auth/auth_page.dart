@@ -18,7 +18,14 @@ class _AuthpageState extends State<AuthPage> {
         title: Text('Authenticate'),
       ),
       body: Container(
-        margin: EdgeInsets.all(25),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage('https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg',),
+            fit: BoxFit.cover,
+            // colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop)
+          )
+        ),
+        padding: EdgeInsets.all(25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
