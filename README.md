@@ -2,6 +2,8 @@
 
 A shopping cart application made with Flutter
 
+![alt text](https://github.com/leoelstin/flutter_kart/blob/master/images/MacBook.png?raw=true)
+
 ## Feel free to star and fork the project
 
 I'll continue to work on this project as im learning the flutter framework. 
