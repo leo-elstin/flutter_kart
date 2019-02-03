@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+import 'signup_page.dart';
 
 class AuthPage extends StatefulWidget {
   @override
@@ -9,7 +10,17 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthpageState extends State<AuthPage> {
-  bool _acceptTerms = false;
+  bool _isLogin = true;
+
+  void changePage(bool isLogin) {
+    setState(() {
+     // print(isLogin);
+      _isLogin = isLogin;
+    });
+  }
+
+  // Widget currentPage = LoginPage(changePage());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +59,7 @@ class _AuthpageState extends State<AuthPage> {
                     style: TextStyle(fontSize: 35, color: Colors.white),
                   ),
                 ),
-                LoginPage(),
+                _isLogin ? LoginPage(changePage) : SignUpPage(changePage),
               ],
             ),
           ),

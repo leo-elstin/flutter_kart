@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+   final  Function changePage;
+
+   LoginPage(this.changePage);
+
   @override
   Widget build(BuildContext context) {
-    
     return _buildLoginWidget(context: context);
   }
 
- Column _buildLoginWidget({context : BuildContext}) {
+  Column _buildLoginWidget({context: BuildContext}) {  
     return Column(
       children: <Widget>[
         Container(
@@ -96,7 +99,7 @@ class LoginPage extends StatelessWidget {
 
             // Using Routes
 
-            Navigator.pushNamed(context, '/home');
+            Navigator.pushReplacementNamed(context, '/home');
           },
         ),
         Container(
@@ -119,7 +122,9 @@ class LoginPage extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            changePage(false);
+          },
         ),
       ],
     );
