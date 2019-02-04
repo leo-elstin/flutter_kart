@@ -6,7 +6,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildLoginWidget();
+    return _buildLoginWidget(context: context);
   }
 
   Column _buildLoginWidget({context: BuildContext}) {
@@ -103,7 +103,7 @@ class SignUpPage extends StatelessWidget {
           textColor: Colors.white,
           child: Text('Sign Up'),
           onPressed: () {
-            Navigator.pushNamed(context, '/home');
+           // Navigator.pushNamed(context, '/home');
           },
         ),
         Container(

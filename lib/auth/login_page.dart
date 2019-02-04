@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-   final  Function changePage;
+  final Function changePage;
 
-   LoginPage(this.changePage);
+  LoginPage(this.changePage);
 
   @override
   Widget build(BuildContext context) {
     return _buildLoginWidget(context: context);
   }
 
-  Column _buildLoginWidget({context: BuildContext}) {  
+  Column _buildLoginWidget({context: BuildContext}) {
     return Column(
       children: <Widget>[
         Container(
