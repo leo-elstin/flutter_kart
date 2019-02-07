@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kart/utils/utils.dart';
+import 'login_page.dart';
+import 'signup_page.dart';
 
 class AuthPage extends StatefulWidget {
   @override
@@ -9,9 +10,16 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthpageState extends State<AuthPage> {
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String _email;
-  String _passwaord;
+  bool _isLogin = true;
+
+  void changePage(bool isLogin) {
+    setState(() {
+     // print(isLogin);
+      _isLogin = isLogin;
+    });
+  }
+
+  // Widget currentPage = LoginPage(changePage());
 
   @override
   Widget build(BuildContext context) {
@@ -52,90 +60,7 @@ class _AuthpageState extends State<AuthPage> {
                     style: TextStyle(fontSize: 35, color: Colors.white),
                   ),
                 ),
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(top: 10, bottom: 10),
-                        child: TextFormField(
-                          textInputAction: TextInputAction.none,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: textDecoration(
-                            'Email Address',
-                          ),
-                          onSaved: (String value) {
-                            setState(
-                              () {
-                                _email = value;
-                              },
-                            );
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: textDecoration(
-                          'Password',
-                        ),
-                        onSaved: (String value) {
-                          setState(
-                            () {
-                              _passwaord = value;
-                            },
-                          );
-                        },
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.centerRight,
-                          margin: EdgeInsets.only(top: 25, right: 5),
-                          child: Text(
-                            'Forgot Password ?',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ),
-
-                      // SwitchListTile(
-                      //   title: Text('I accept the Terms & Conditions'),
-                      //   value: _acceptTerms,
-                      //   onChanged: (bool value) {
-                      //     setState(() {
-                      //       _acceptTerms = value;
-                      //     });
-                      //   },
-                      // ),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      FlatButton(
-                        shape: new RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0)),
-                            side: BorderSide(color: Colors.white)),
-                        padding: EdgeInsets.only(left: 50, right: 50),
-                        // color: Theme.of(context).buttonColor,
-                        textColor: Colors.white,
-                        child: Text('Login'),
-                        onPressed: () {
-                          // Navigator.pushReplacement(   // replcet the curent layout unlike push that just creates new page
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (BuildContext cotext) => HomePage()));
-
-                          // Using Routes
-
-                          // Navigator.pushNamed(context, '/home');
-                        },
-                      )
-                    ],
-                  ),
-                ),
+                _isLogin ? LoginPage(changePage) : SignUpPage(changePage),
               ],
             ),
           ),

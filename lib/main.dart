@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           brightness: Brightness.light,
-          primarySwatch: Colors.indigo,
+          primarySwatch: Colors.blue,
           accentColor: Colors.amberAccent,
           buttonColor: Colors.blue),
       // home: AuthPage(),  this is replaced by routes '/'
