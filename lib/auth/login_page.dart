@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kart/utils/utils.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   final Function changePage;
 
   LoginPage(this.changePage);
+
+@override
+  State<StatefulWidget> createState() {
+    return _LoginState(changePage);
+  }
+}
+
+class _LoginState extends State<LoginPage> {
+final Function _changePage;
+
+  _LoginState(this._changePage);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +23,9 @@ class LoginPage extends StatelessWidget {
   }
 
   Form _buildLoginWidget({context: BuildContext}) {
+    final GlobalKey<FormState> _formKey = GlobalKey<FormState> ();
     return Form( 
+      key: _formKey,
       child : Column(
       children: <Widget>[
         Container(
@@ -30,12 +43,12 @@ class LoginPage extends StatelessWidget {
         SizedBox(
           height: 25,
         ),
-        TextField(
+        TextFormField(
           style: TextStyle(color: Colors.white),
           keyboardType: TextInputType.emailAddress,
           decoration: textDecoration('Password'),
-          onChanged: (String value) {
-            // setState(() {});
+          onSaved: (String value) {
+             setState(() {});
           },
         ),
         GestureDetector(
@@ -105,7 +118,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            changePage(false);
+            _changePage(false);
           },
         ),
       ],

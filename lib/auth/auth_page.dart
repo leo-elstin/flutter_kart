@@ -11,10 +11,9 @@ class AuthPage extends StatefulWidget {
 
 class _AuthpageState extends State<AuthPage> {
   bool _isLogin = true;
-
   void changePage(bool isLogin) {
     setState(() {
-     // print(isLogin);
+      // print(isLogin);
       _isLogin = isLogin;
     });
   }
