@@ -4,6 +4,9 @@ import 'package:flutter_kart/model/Product.dart';
 class ProductsModel extends Model {
   List<Product> _products = [];
   List<Product> _cartList = [];
+  ProductsModel() {
+    _cartList.add(Product('Masala Dosai', 'Yummy and tasty hot dosai stuffed with potattoghfhgfhh', 13, ''));
+  }
 
   List<Product> get products {
     return List.from(_products);

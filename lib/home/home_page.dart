@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         ProductsModel model,
       ) {
         return Scaffold(
-          appBar: _buildAppBar(model),
+          appBar: _buildAppBar(model, context),
           body: ProductList(),
            drawer: Drawer(
                 child: Column(
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildAppBar(ProductsModel model) {
+  Widget _buildAppBar(ProductsModel model, BuildContext  context) {
     return AppBar(
       title: Text('Home'),
       actions: <Widget>[
@@ -48,7 +48,9 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.shopping_cart),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/cart');
+              },
             ),
             Container(
               height: 35,
