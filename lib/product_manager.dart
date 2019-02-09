@@ -46,7 +46,7 @@ class _StateProductManager extends State<ProductManager> {
             //child: ProductController(_addProduct()), 
             ),
         Expanded(
-          child: Products(_products,deleteProduct : _removeProduct),
+          child: Products(),
         )
       ],
     );

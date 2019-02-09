@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kart/product_controller.dart';
-
+import 'package:flutter_kart/model/Product.dart';
 class ProductCreate extends StatefulWidget {
-  final Function addProduct;
-
-  ProductCreate(this.addProduct);
 
   @override
   State<StatefulWidget> createState() {
@@ -62,11 +59,7 @@ class _ProductCreateState extends State<ProductCreate> {
           // RaisedButton(onPressed: () {
           //   FocusScope.of(context).requestFocus(new FocusNode());
           // },),
-          ProductController(widget.addProduct, {
-            'title' : title,
-            'description' : description,
-            'price' : price.toString()
-          }),
+          ProductController(Product(title,description,price,'s')),
         ],
       ),
     );

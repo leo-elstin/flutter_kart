@@ -15,6 +15,10 @@ class LoginPage extends StatefulWidget {
 class _LoginState extends State<LoginPage> {
   final Function _changePage;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final Map<String, dynamic> _loginData = {
+    'email' : null,
+    'password' : Null
+  };
   _LoginState(this._changePage);
 
   @override
@@ -23,15 +27,12 @@ class _LoginState extends State<LoginPage> {
   }
 
   Form _buildLoginWidget(GlobalKey formkey, {context: BuildContext}) {
-    String _email;
-    String password;
 
     Widget _buildEmailField() {
       return TextFormField(
         // autovalidate: true,
         validator: (String value) {
-          if (value.trim().isEmpty) return 'Email can\'t be empty.';
-          if (!isEmail(value)) return 'Please enter a valid email.';
+          if (!isEmail(value) || value.trim().isEmpty) return 'Please enter a valid email.';
         },
 
         style: TextStyle(color: Colors.white),
@@ -39,17 +40,14 @@ class _LoginState extends State<LoginPage> {
         keyboardType: TextInputType.emailAddress,
         decoration: textDecoration('Email Address'),
         onSaved: (String value) {
-          setState(
-            () {
-              _email = value;
-            },
-          );
+              _loginData['email'] = value;
         },
       );
     }
 
     Widget _buildPasswordField() {
       return TextFormField(
+        initialValue: '',  // used to set the initial value
         validator: (String value) {
           if (value.trim().isEmpty) return 'Please enter your password.';
         },
@@ -57,11 +55,7 @@ class _LoginState extends State<LoginPage> {
         keyboardType: TextInputType.emailAddress,
         decoration: textDecoration('Password'),
         onSaved: (String value) {
-          setState(
-            () {
-              password = value;
-            },
-          );
+              _loginData['password'] = value;
         },
       );
     }
@@ -123,7 +117,9 @@ class _LoginState extends State<LoginPage> {
               // Using Routes
 
               _formKey.currentState.save();
-              if (!_formKey.currentState.validate()) {
+
+              if (_formKey.currentState.validate()) {
+                print('object');
                 return;
               } else {
                 Navigator.pushNamed(context, '/home');
