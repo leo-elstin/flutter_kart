@@ -5,7 +5,8 @@ import 'scoped-model/products_model.dart';
 import 'model/Product.dart';
 
 class Products extends StatelessWidget {
-  Widget _buildProductItems(BuildContext context, int position, Product product) {
+  Widget _buildProductItems(BuildContext context, int position, Product product,
+      ProductsModel model) {
     return Dismissible(
       key: Key('value'),
       onDismissed: (DismissDirection direction) {},
@@ -68,15 +69,20 @@ class Products extends StatelessWidget {
                   onPressed: () => Navigator.push<bool>(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext cotext) => ProductDetails(
-                              product.description, ''),
+                          builder: (BuildContext cotext) =>
+                              ProductDetails(product.description, ''),
                         ),
                       ).then((bool value) {
                         if (value) {
                           // deleteProduct(position);
                         } else {}
-                        
                       }),
+                ),
+                FlatButton(
+                  child: Text(
+                    'Add to Cart',
+                  ),
+                  onPressed: () => model.addToCart(product),
                 )
               ],
             )
@@ -86,16 +92,16 @@ class Products extends StatelessWidget {
     );
   }
 
-  Widget _buildProductList(List<Product> products) {
+  Widget _buildProductList(List<Product> products, ProductsModel model) {
     Widget productCard;
     if (products.length > 0) {
       productCard = ListView.builder(
-        itemBuilder: (BuildContext context, int index) =>
-          _buildProductItems(
-            context,
-            index,
-            products[index],
-          ),
+        itemBuilder: (BuildContext context, int index) => _buildProductItems(
+              context,
+              index,
+              products[index],
+              model,
+            ),
         itemCount: products.length,
       );
       // productCard = Center(child: Text(products.length.toString()));
@@ -109,7 +115,7 @@ class Products extends StatelessWidget {
   Widget build(BuildContext context) {
     return new ScopedModelDescendant<ProductsModel>(
       builder: (BuildContext context, Widget child, ProductsModel model) {
-        return _buildProductList(model.products);
+        return _buildProductList(model.products, model);
       },
     );
   }
