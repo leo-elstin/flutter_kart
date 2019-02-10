@@ -8,6 +8,26 @@ class ProductsModel extends Model {
   List<Product> _cartList = [];
 
   ProductsModel() {
+    _products.add(Product(
+      'Beef Chilli',
+      'Freshly cooked yummy beef chilli dry',
+      120,
+      'https://assets.epicurious.com/photos/578d20a00103fcdb27360fe8/master/pass/beef-and-bean-chili.jpg',
+    ));
+
+    _products.add(Product(
+      'Masala Dosai',
+      'Yummy and tasty hot dosai stuffed with potattoghfhgfhh',
+      50,
+      'http://www.bhatkallys.com/wp-content/uploads/2016/12/22796096d9c63708fb5bdddd27fa10fe.jpg',
+    ));
+
+    _products.add(Product(
+      'Veg Fried Rice',
+      'Veg friedn rice with Lime juice combo',
+      100,
+      'https://www.dinneratthezoo.com/wp-content/uploads/2016/10/veggie-fried-rice-6-500x500.jpg',
+    ));
 
     _products.add(Product(
       'Beef Chilli',
@@ -46,7 +66,7 @@ class ProductsModel extends Model {
         4.3,
         500));
 
-            _hotelList.add(Hotel(
+    _hotelList.add(Hotel(
         'Al-Saj',
         'https://media-cdn.tripadvisor.com/media/photo-s/08/82/ac/ff/saj-alreef-gullan-street.jpg',
         'South Indian, North Indian',
@@ -65,6 +85,14 @@ class ProductsModel extends Model {
 
   List<Hotel> get getHotelList {
     return List.from(_hotelList);
+  }
+
+  double get getCartPrice {
+    double price = 0;
+    getCartList.forEach((Product pro) {
+      price += pro.price;
+    });
+    return price;
   }
 
   void addProduct(Product product) {
