@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'home/product_details.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'scoped-model/products_model.dart';
 import 'model/Product.dart';
+import 'product/cart_card.dart';
 
 class ProductListView extends StatelessWidget {
   Widget _buildProductItems(BuildContext context, int position, Product product,
       ProductsModel model) {
-    return _buildProductCard(context, product, model);
+    return CartCard(product);
   }
 
   Widget _buildProductList(List<Product> products, ProductsModel model) {

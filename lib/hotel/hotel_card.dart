@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import '../scoped-model/products_model.dart';
 import '../model/hotel.dart';
+import 'package:flutter_kart/pages/hotel_ui.dart';
 
 class HotelListView extends StatelessWidget {
   final bool isVertical;
@@ -72,7 +73,9 @@ class HotelListView extends StatelessWidget {
   Widget _buildHotelCard(
       BuildContext context, Hotel product, ProductsModel model) {
     return GestureDetector(
-      onTap: () => {},
+      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (BuildContext cotext) => HotelPage(product),
+          )),
       child: Container(
         height: 250,
         width: MediaQuery.of(context).size.width * .75,

@@ -15,6 +15,7 @@ class HotelList extends StatelessWidget {
           child: Text(
             'Your favourites',
             style: TextStyle(
+              fontWeight: FontWeight.bold,
               fontSize: 18,
               fontFamily: 'Lato',
             ),
@@ -28,11 +29,12 @@ class HotelList extends StatelessWidget {
             'More Resturants',
             style: TextStyle(
               fontSize: 18,
+              fontWeight: FontWeight.bold,
               fontFamily: 'Lato',
             ),
           ),
         ),
-       HotelListView(false),
+        HotelListView(false),
         Divider(),
       ],
     );
