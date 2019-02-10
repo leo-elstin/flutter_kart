@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kart/product/product_list.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_kart/scoped-model/products_model.dart';
+import 'package:flutter_kart/hotel/hotel_list.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       ) {
         return Scaffold(
           appBar: _buildAppBar(model, context),
-          body: ProductList(),
+          body: HotelList(),
            drawer: Drawer(
                 child: Column(
                   children: <Widget>[
