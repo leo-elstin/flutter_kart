@@ -29,7 +29,6 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                          Navigator.pop(context);
                         Navigator.pushNamed(context, '/admin');
-                       
                       },
                     )
                   ],

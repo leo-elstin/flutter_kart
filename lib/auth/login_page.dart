@@ -118,11 +118,10 @@ class _LoginState extends State<LoginPage> {
 
               _formKey.currentState.save();
 
-              if (_formKey.currentState.validate()) {
-                print('object');
+              if (!_formKey.currentState.validate()) {
                 return;
               } else {
-                Navigator.pushNamed(context, '/home');
+                Navigator.pushReplacementNamed(context, '/home');
               }
             },
           ),
