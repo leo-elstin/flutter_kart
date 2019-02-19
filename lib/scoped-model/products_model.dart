@@ -2,10 +2,14 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_kart/model/Product.dart';
 import 'package:flutter_kart/model/hotel.dart';
 
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 class ProductsModel extends Model {
   List<Hotel> _hotelList = [];
   List<Product> _products = [];
   List<Product> _cartList = [];
+  final baseUrl = 'http://api.flutterapp.in/api/';
 
   ProductsModel() {
     _products.add(Product(
@@ -96,6 +100,22 @@ class ProductsModel extends Model {
   }
 
   void addProduct(Product product) {
+    final Map<String, dynamic> productMap = {
+      'title': product.title,
+      'description': product.description,
+      'price': product.price,
+      'image':
+          'https://www.dinneratthezoo.com/wp-content/uploads/2016/10/veggie-fried-rice-6-500x500.jpg',
+    };
+
+    http.post('http://api.flutterapp.in/api/products',
+        body: json.encode(productMap),
+        headers: {
+          'Content-Type': 'application/json',
+        }).then((response) {
+      print("Response status: ${response.statusCode}");
+      print("Response body: ${response.body}");
+    });
     _products.add(product);
     notifyListeners();
   }
