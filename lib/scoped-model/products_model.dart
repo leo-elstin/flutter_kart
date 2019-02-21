@@ -77,6 +77,7 @@ class ProductsModel extends Model {
         '25-30 Mins',
         4.0,
         500));
+
   }
 
   List<Product> get products {
@@ -108,16 +109,33 @@ class ProductsModel extends Model {
           'https://www.dinneratthezoo.com/wp-content/uploads/2016/10/veggie-fried-rice-6-500x500.jpg',
     };
 
-    http.post('http://api.flutterapp.in/api/products',
-        body: json.encode(productMap),
-        headers: {
-          'Content-Type': 'application/json',
-        }).then((response) {
-      print("Response status: ${response.statusCode}");
-      print("Response body: ${response.body}");
-    });
+    http.post(
+      baseUrl + 'products',
+      body: json.encode(productMap),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    ).then(
+      (response) {
+        print("Response status: ${response.statusCode}");
+        print("Response body: ${response.body}");
+      },
+    );
     _products.add(product);
     notifyListeners();
+  }
+
+ getProductList() async {
+  final data = await  http
+        .get(
+      baseUrl + 'products',
+    )
+        .then(
+      (response) {
+       
+      },
+    );
+    
   }
 
   void addToCart(Product product) {

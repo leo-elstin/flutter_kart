@@ -59,7 +59,7 @@ class _ProductCreateState extends State<ProductCreate> {
           // RaisedButton(onPressed: () {
           //   FocusScope.of(context).requestFocus(new FocusNode());
           // },),
-          ProductController(Product(title,description,price,'s')),
+          ProductController(Product(title,description,price,'https://www.dinneratthezoo.com/wp-content/uploads/2016/10/veggie-fried-rice-6-500x500.jpg')),
         ],
       ),
     );

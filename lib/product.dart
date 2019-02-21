@@ -43,7 +43,7 @@ class ProductListView extends StatelessWidget {
     );
   }
 
-  Widget _buildProductCard(
+  Widget x_buildProductCard(
       BuildContext context, Product product, ProductsModel model) {
     return Container(
       height: 250,
