@@ -15,7 +15,7 @@ Add new product
 product listing
 
 - Upcoming Features - 
-Sign up
+Sign up \n
 Complete auth flow
 Editing products
 Shopping cart
