@@ -29,7 +29,7 @@ This project needs you! If you would like to support this project's further deve
 **PayPal**
 
 * **[Donate $5](https://www.paypal.me/leoelstin/5)**: Thank's for creating this project, here's a coffee (or some beer) for you!
-* **[Donate $10](https://www.paypal.me/leoelstin/1)**: Wow, I am stunned. Let me take you to the movies!
+* **[Donate $10](https://www.paypal.me/leoelstin/10)**: Wow, I am stunned. Let me take you to the movies!
 * **[Donate $15](https://www.paypal.me/leoelstin/15)**: I really appreciate your work, let's grab some lunch!
 * **[Donate $25](https://www.paypal.me/leoelstin/25)**: That's some awesome stuff you did right there, dinner is on me!
 Of course, you can also choose what you want to donate, all donations are awesome!
